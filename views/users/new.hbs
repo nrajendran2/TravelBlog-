@@ -1,0 +1,24 @@
+h1>Create New User</h1>
+<form method="POST" action="/companies/{{userId}}/sodas">
+  <div>
+    <label for="name">Name of Soda</label>
+    <input type="text" name="name">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input type="text" name="price">
+  </div>
+  <div>
+    <label for="packaging">Packaging</label>
+    <select name="packaging">
+      <option value="can">Can</option>
+      <option value="bottle">Bottle</option>
+    </select>
+  </div>
+  <div>
+    <label for="quantitySold">Quantity Sold</label>
+    <input type="text" name="quantitySold">
+  </div>
+  
+  <button type="submit">Add Company</button>
+</form>
