@@ -5,31 +5,26 @@ const User = require('../models/users')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  User.find().then((users) => {
-
-    res.render('users/index', {
-        users: users
-    })
-})
+  res.render('index')
 })
 
 
-router.get('users/new' ,(req, res) => {
-  res.render('users/new')
-})
+// router.get('/new' ,(req, res) => {
+//   res.render('users/new')
+// })
 
-router.post('user/index', (req, res) => {
-  let newUser = new User({
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      username: req.body.username
-  })
-  newUser.save().then((savedUser) => {
-      res.redirect(`users/index/${savedUser_id}`)
+// router.post('user/index', (req, res) => {
+//   let newUser = new User({
+//       firstname: req.body.firstname,
+//       lastname: req.body.lastname,
+//       username: req.body.username
+//   })
+//   newUser.save().then((savedUser) => {
+//       res.redirect(`/users/${savedUser_id}`)
 
-  }).catch((err) => {
-      conosle.log(err)
-  })
-})
+//   }).catch((err) => {
+//       conosle.log(err)
+//   })
+// })
 
 module.exports = router;
