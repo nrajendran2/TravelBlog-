@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router({ mergeParams: true });
 const User = require('../models/users')
-const PlacesTraveled = require('../models/placesTraveled')
+const PlacesDesired = require('../models/placesDesired')
 
 
 
@@ -23,7 +23,7 @@ const PlacesTraveled = require('../models/placesTraveled')
 
 // NEW ROUTE for places traveled
 router.get('/new', (req, res) => {
-    res.render('placesTraveled/new', {
+    res.render('placesDe/new', {
         userId: req.params.userId
     })
 })
