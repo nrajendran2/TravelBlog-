@@ -47,6 +47,7 @@ router.post('/', (req, res) => {
 
         return user.save()
     }).then((updatedUser) => {
+        console.log(updatedUser)
         res.redirect(`/users/${req.params.userId}`)
     })
 
