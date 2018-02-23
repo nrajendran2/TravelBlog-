@@ -52,7 +52,17 @@ router.post('/', (req, res) => {
     })
 
 })
-/
+
+router.get('users/:id/edit', (req, res) => {
+
+    User.findById(req.params.userId).then((user) => {
+      const placesTraveled = user.placesTraveled.id(req.params.id)
+      res.render('placesTraveled/edit', {
+        userId: req.params.userId,
+        placesTraveled: placesTraveled
+      })
+    })
+  })
 
 
 router.put('/users/:id', (req,res) => {

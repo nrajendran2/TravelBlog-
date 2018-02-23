@@ -9,8 +9,8 @@ const PTSchema = new Schema (
        location: String,
         season: String,
         image: String,
-        image1: String,
-        image2: String,
+        imageone: String,
+        imagetwo: String,
         review: String
     }
 )
