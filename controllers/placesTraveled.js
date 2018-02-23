@@ -1,28 +1,41 @@
-
-/* GET users listing. */
 var express = require('express');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 const User = require('../models/users')
+const placesTraveled = require('../models/placesTraveled')
+
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  User.find().then((users) => {
-
-    res.render('users/index', {
-        users: users
-    })
-})
-})
+// router.get('/', function(req, res, next) {
+//     const userId = req.params.userId
+//   User.findById(req.params.userId)
+//   .then((user) => {
+//       console.log(user)
+//     res.render('placesTraveled/', {
+//         places: user.placesTraveled
+        
+    
+        
+//     })
+// })
+// })
 
 
 
 router.get('/new' ,(req, res) => {
-  res.render('users/new')
+  res.render('placesTraveled/new', {
+      userId: req.params.userId
+  })
 })
 
+
+
 router.post('/', (req, res) => {
-  const newUser = new User({
+  User.findById(req.params.userId).then((user) => {
+      const placesTraveled = new PlacesTraved ({
+        name: req.body.name 
+      })
+  }
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       username: req.body.username

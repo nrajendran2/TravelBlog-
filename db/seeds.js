@@ -1,5 +1,7 @@
 require('dotenv').config()
 const User = require('../models/users')
+const PlacesTraveled = require('../models/placesTraveled')
+const PlacesDesired = require('../models/placesDesired')
 const mongoose = require('mongoose')
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -14,10 +16,37 @@ mongoose.connection.on('error', (error) => {
   process.exit(-1)
 })
 
+const georgia = new PlacesTraveled ({
+    state: "Georgia"
+})
+
+const oregon = new PlacesDesired ({
+    state: "Oregon",
+    location:"Blue Crater Lake",
+    image: "Blue Crater Lake",
+    review: "Lemme go"
+})
+
+const washington = new PlacesDesired ({
+    state: "washington",
+    location: "Seattle",
+    image: "asdfa", 
+    review: "So good soo soo good "
+})
+
+const canada = new PlacesTraveled ({
+    state: "idk elsewhere",
+    location: "Vancouver",
+    image: "https://www.google.com/imgres?imgurl=https://www.hellobc.com/getmedia/43fd04b5-28b5-4685-8dab-4d74eed6cf6d/2-7086-Vancouver.jpg.aspx&imgrefurl=https://www.hellobc.com/vancouver.aspx&h=530&w=990&tbnid=jGABnpsGrzW4zM:&tbnh=164&tbnw=307&usg=__csibg_IWvlHMG2Ctwtf86pC32BU%3D&vet=1&docid=F-cnMWZU-TSutM",
+    review: 'It was good'
+})
+
 const cameron = new User ({
     firstname: "Cameron",
     lastname: "Gunter",
-    username: "CamtheMan2.0"
+    username: "CamtheMan2.0",
+    placesTraveled: [ georgia, canada ],
+    placesDesired: [oregon, washington]
 })
 
 const owen = new User ({

@@ -1,7 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema 
 
+mongoose.Promise = global.Promise 
 
-router.get('/', function (req, res, next) {
-    res.
-}
+const PTDschema = new Schema (
+    {
+       state: String,
+       location: String,
+        season: String,
+        image: String,
+        image1: String,
+        reason: String
+    }
+)
+
+module.exports = PTDschema 

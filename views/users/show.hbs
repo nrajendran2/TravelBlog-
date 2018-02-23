@@ -1,1 +1,15 @@
-<h1>This works</h1>
+<h1>{{newuser.firstname}}</h1>
+
+
+<div>{{ newuser.firstname }}</div>
+<div>{{ newuser.lastname }}</div>
+<div>{{ newuser.placesTraveled.[1].location}}</div>
+<div>{{newuser.placesDesired.[0].location}}</div>
+
+<div>
+    {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}}
+<a href="">Takes you to places places traveled</a>
+</div>
+<div>
+<a href="">Takes you to places desired </a>
+</div>

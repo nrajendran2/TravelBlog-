@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var index = require('./controllers/index');
 var users = require('./controllers/users');
 var mongoose = require('mongoose');
+var placesTraveled = require('./controllers/placesTraveled')
+
+
 mongoose.connect(process.env.MONGODB_URI); 
 
 var app = express();
@@ -27,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-
+app.use('/users/:userId/placesTraveled',placesTraveled)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
