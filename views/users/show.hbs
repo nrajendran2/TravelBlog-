@@ -3,13 +3,18 @@
 
 <div>{{ newuser.firstname }}</div>
 <div>{{ newuser.lastname }}</div>
-<div>{{ newuser.placesTraveled.[1].location}}</div>
+<div>{{ newuser.placesTraveled.location}}</div>
 <div>{{newuser.placesDesired.[0].location}}</div>
-
+<div>{{users.placesTraveled.[0].state}}</div>
 <div>
     {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}}
-<a href="">Takes you to places places traveled</a>
+<a href="/users/{{newuser._id}}/placesTraveled/new/">add new place</a>
 </div>
 <div>
 <a href="">Takes you to places desired </a>
+</div>
+
+
+<div>>
+{{#each newuser.placesTraveled.}}
 </div>

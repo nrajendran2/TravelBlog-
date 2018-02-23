@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router({ mergeParams: true });
 const User = require('../models/users')
-const placesTraveled = require('../models/placesTraveled')
+const PlacesTraveled = require('../models/placesTraveled')
 
 
 
@@ -21,7 +21,7 @@ const placesTraveled = require('../models/placesTraveled')
 // })
 
 
-
+// NEW ROUTE for places traveled
 router.get('/new', (req, res) => {
     res.render('placesTraveled/new', {
         userId: req.params.userId
@@ -29,35 +29,52 @@ router.get('/new', (req, res) => {
 })
 
 
-
+//POST ROUTE TO 
 router.post('/', (req, res) => {
     User.findById(req.params.userId).then((user) => {
-        const newplacesTraveled = new PlacesTraved({
+        console.log(req.body)
+        const newplacesTraveled = new PlacesTraveled({
             state: req.body.state,
             location: req.body.location,
-            season: req.body.seaso,
+            season: req.body.season,
             image: req.body.image,
             image1: req.body.image1,
             image2: req.bodyimagd2,
             review: req.body.review
         })
-        user.placestraveled.push(newplacesTraveled)
+        user.placesTraveled.push(newplacesTraveled)
 
 
-        return placesTraveled.save()
+        return user.save()
     }).then((updatedUser) => {
-        res.redirect(`/users/${req.params.userID}`)
+        res.redirect(`/users/${req.params.userId}`)
     })
 
 })
+/
 
-newUser.save().then((savedUser) => {
 
-    res.redirect(`/users/${savedUser._id}`)
-
-}).catch((err) => {
-    conosle.log(err)
+router.put('/users/:id', (req,res) => {
+User.findByIdAndUpdate(req.params.userId).then((user)=>{
+    user.placestraveled.id(req.params.id).update()
+    return user.save()
+}).then (()=> {
+    res.redirect(`/users/${req.params.userId}/placesTraveled`)
 })
+})
+
+
+//Delete Route
+router.delete('/:id', (req, res) => {
+User.findById(req.params.userId).then((user)=> {
+user.placestraveled.id(req.params.id).remove()
+return user.save()
+}).then (()=> {
+    res.redirect(`/users/${req.params.userId} /placesTraveled`)
+})
+
+})
+
 
 
 router.get('/:id', (req, res) => {
