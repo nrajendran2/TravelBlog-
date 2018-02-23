@@ -9,7 +9,8 @@ const PTDschema = new Schema (
        location: String,
         season: String,
         image: String,
-        image1: String,
+        imageone: String,
+        imagetwo:String,
         reason: String
     }
 )

@@ -23,7 +23,7 @@ const PlacesDesired = require('../models/placesDesired')
 
 // NEW ROUTE for places traveled
 router.get('/new', (req, res) => {
-    res.render('placesDe/new', {
+    res.render('placesDesired/new', {
         userId: req.params.userId
     })
 })
@@ -33,16 +33,25 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     User.findById(req.params.userId).then((user) => {
         console.log(req.body)
-        const newplacesTraveled = new PlacesTraveled({
+        const newplacesDesired = new PlacesDesired({
             state: req.body.state,
             location: req.body.location,
             season: req.body.season,
             image: req.body.image,
-            image1: req.body.image1,
-            image2: req.bodyimagd2,
+            imageone: req.body.imageone,
+            imagetwo: req.bodyimagetwo,
             review: req.body.review
         })
         user.placesTraveled.push(newplacesTraveled)
+
+
+        state: String,
+        location: String,
+         season: String,
+         image: String,
+         image1: String,
+         reason: String
+     }
 
 
         return user.save()
