@@ -1,8 +1,31 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: "https://i.imgur.com/0ZbgvOG.jpg";
+
+
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  background-image: "https://i.imgur.com/0ZbgvOG.jpg";
+  
+}
+.bothsides {
+  display:flex;
+  flex-direction:row;
+}
+.rightside{
+  background-color: darkgreen;
+  display: flex;
+  flex-direction: column;
+}
+.leftside{
+background-color:darkgreen;
+display:flex;
+flex-direction: column;
+
+}
+.button {
+  color:black;
 }

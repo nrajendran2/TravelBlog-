@@ -42,17 +42,7 @@ router.post('/', (req, res) => {
             imagetwo: req.bodyimagetwo,
             review: req.body.review
         })
-        user.placesTraveled.push(newplacesTraveled)
-
-
-        state: String,
-        location: String,
-         season: String,
-         image: String,
-         image1: String,
-         reason: String
-     }
-
+        user.placesDesired.push(newplacesDesired)
 
         return user.save()
     }).then((updatedUser) => {
@@ -65,10 +55,10 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
-      const placesTraveled = user.placesTraveled.id(req.params.id)
-      res.render('placesTraveled/edit', {
+      const placesDesired = user.placesDesired.id(req.params.id)
+      res.render('placesDesired/edit', {
         userId: req.params.userId,
-        placesTraveled: placesTraveled
+        placesDesired: placesDesired
       })
     })
   })
@@ -76,10 +66,10 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req,res) => {
 User.findByIdAndUpdate(req.params.userId).then((user)=>{
-    user.placestraveled.id(req.params.id).update()
+    user.placesdesired.id(req.params.id).update()
     return user.save()
 }).then (()=> {
-    res.redirect(`/users/${req.params.userId}/placesTraveled`)
+    res.redirect(`/users/${req.params.userId}/placesDesired`)
 })
 })
 
@@ -87,7 +77,7 @@ User.findByIdAndUpdate(req.params.userId).then((user)=>{
 //Delete Route
 router.delete('/:id', (req, res) => {
 User.findById(req.params.userId).then((user)=> {
-user.placesTraveled.id(req.params.id).remove()
+user.placesDesired.id(req.params.id).remove()
 return user.save()
 }).then (()=> {
     res.redirect(`/users/${req.params.userId}`)

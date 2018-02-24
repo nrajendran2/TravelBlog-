@@ -1,0 +1,36 @@
+<h1>Edit Page</h1>
+{{!-- <form method="POST" action="/users/{{userId}}/placesTraveled"> --}}
+<form method="POST" action="/users/{{userId}}/placesDesired/{{users.placesDesired._id}}?_method=PATCH">
+    <div>
+        <label for="state">State</label>
+        <input type="text" name="state">
+    </div>
+    <div>
+        <label for="location">location</label>
+        <input type="text" name="location" value="{{user.placesDesired.location}}">
+    </div>
+    <div>
+        <label for="season">Season</label>
+        <input name="season" value="{{user.Desired.season}}">
+    </div>
+<div>
+        <label for="image">Image</label>
+        <input name="image" value="{{user.placesDesired.image}}"> 
+    </div>
+    <div>
+        <label for="imageone">Image</label>
+        <input name="image" value="{{user.placesDesired.imageone}}">
+    </div>
+<div>
+        <label for="imagetwo">Image</label>
+        <input name="image" value="{{user.placesDesired.imagetwo}}">
+    </div>
+
+<div>
+        <label for="review">Review</label>
+        <input name="review" value="{{user.placesDesired.review}}">
+    </div>
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form>
