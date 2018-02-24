@@ -8,7 +8,7 @@ body {
 
 a {
   color: white;
-  background-image: "https://i.imgur.com/0ZbgvOG.jpg";
+  
   
 }
 .bothsides {
@@ -20,7 +20,7 @@ a {
   background-color: rgba(50,100,50,.8);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
   
 }
 .rightside{
@@ -49,218 +49,16 @@ body {
   flex-direction:row;
 }
 .firstimage {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 .secondimage {
-  height: 20px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 .thirdimage {
-  height: 210px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
-main {
-  flex: 1 0 auto;
-}
 
-.container {
-  width: 85%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.retro_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-}
-
-.pad-left {
-  margin-left: 30px;
-}
-
-a {
-  color: #00B7FF;
-}
-
-.main-header {
-  background: url("/images/minimalism-1506901012535-9822.gif");
-  background-repeat: no-repeat;
-  height: 40vh;
-  background-size: cover;
-  color: white;
-}
-
-.user-header {
-  background: url("/images/minimalism-1506901012535-9822.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.main-header h1 {
-  margin: 0;
-}
-
-.shadow {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.user-shadow {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.user-title {
-  display: flex;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-/* Collapsible Item format */
-
-.collapsible-header {
-  padding: .5rem;
-}
-
-.collapsible-header i {
-  margin-right: 0;
-}
-/*Change Icon colors */
-
-.material-icons {
-  color: #474747;
-}
-
-span.badge {
-  color: white;
-  font-size: .6em;
-}
-/*
-  Flexbox to create equal width divs
-*/
-
-.flexed {
-  display: flex;
-  justify-content: space-around;
-}
-
-.equal {
-  width: 50%;
-  margin: 5px;
-}
-
-.equal p {
-  border: 1px solid black;
-  padding: .5em;
-  margin: .2em;
-}
-/*
-  Priority Colors
-*/
-
-.Highest {
-  background: red;
-  border-radius: 3px;
-}
-
-.High {
-  background: #FF8800;
-  border-radius: 3px;
-}
-
-.Normal {
-  background: #919191;
-  border-radius: 3px;
-}
-
-.Low {
-  background: #B0BE77;
-  border-radius: 3px;
-}
-
-.Lowest {
-  background: #49AC6A;
-  border-radius: 3px;
-}
-
-.page-footer {
-  padding-top: 0;
-}
-/*
-  Post It Note Colors
-*/
-
-.blue {
-  background: #419cd3;
-}
-
-.red {
-  background: #F76771;
-}
-
-.orange {
-  background: #F9AD71;
-}
-
-.yellow {
-  background: #FEE146;
-}
-
-.green {
-  background: #CFE290;
-}
-/*
-  Working with Materialize to order the retro and items for medium and small views
-*/
-
-@media only screen and (max-width: 992px) {
-  .flex-m {
-      display: flex;
-      flex-direction: column;
-      /* Stack on top */
-  }
-  .items {
-      order: 1;
-  }
-  .retros {
-      order: 2;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .flexed {
-      display: block;
-  }
-  .main-header {
-      height: 100%;
-  }
-}

@@ -1,12 +1,12 @@
 <h1>{{newuser.firstname}}</h1>
 
-
+{{!-- 
 <div>{{ newuser.firstname }}</div>
 <div>{{ newuser.lastname }}</div>
 <div>{{ newuser.placesTraveled.location}}</div>
 <div>{{newuser.placesDesired.[0].location}}</div>
 <div>{{users.placesTraveled.[0].state}}</div>
-<div>
+<div> --}}
     {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}}
 <a href="/users/{{newuser._id}}/placesTraveled/new/">add new place</a>
 </div>
@@ -19,11 +19,20 @@
 <div class="bothsides">
 <div class="rightside">
 {{#each newuser.placesTraveled}}
+<ul></ul>
+<li>{{state}}</li>
 <li>{{location}}</li>
 <li>{{season}}</li>
-<li>{{image}}</li>
+<div class= "imagerow">
+<li><img class ="firstimage" src="{{image}}"></li>
+<li><img class ="secondimage" src="{{image}}"></li>
+<li><img class ="thirdimage" src="{{imagetwo}}"></li>
+<li>{{review}}</li>
+</ul>
+</div>
+{{!-- <li>{{image}}</li>
 <li>{{imageone}}</li>
-<li>{{imagetwo}}</li>
+<li>{{imagetwo}}</li> --}}
 <li>{{review}}</li>
 <form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
   <button type="submit">Delete This Places Traveled</button>
@@ -37,12 +46,12 @@
 {{#each newuser.placesDesired}}
 <li>{{location}}</li>
 <li>{{season}}</li>
+<li>{{reason}}</li>
 <div class= "imagerow">
 <li><img class ="firstimage" src="{{image}}"></li>
-<li><img class ="firstimage" src="{{image}}"></li>
-<li><img class ="thirdimage" src="{{image}}"></li>
+<li><img class ="secondimage" src="{{imageone}}"></li>
+<li><img class ="thirdimage" src="{{imagetwo}}"></li>
 </div>
-<li>{{review}}</li>
 <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
   <button type="submit">Delete This Places Desired</button>
 </form>

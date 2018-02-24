@@ -55,6 +55,7 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
+        console.log("USER-----", user)
       const placesDesired = user.placesDesired.id(req.params.id)
       res.render('placesDesired/edit', {
         userId: req.params.userId,
