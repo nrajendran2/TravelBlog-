@@ -8,9 +8,7 @@
 <div>{{users.placesTraveled.[0].state}}</div>
 <div> --}}
     {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}}
-<a href="/users/{{newuser._id}}/placesTraveled/new/">add new place</a>
-</div>
-<div>
+{{!-- s --}}
 {{!-- <a href="">Takes you to places desired </a>
 </div>
 <a href="/users/{{newuser._id}}/edit">Takes you to the edit page </a>
@@ -18,6 +16,7 @@
 
 <div class="bothsides">
 <div class="rightside">
+  <a href="/users/{{newuser._id}}/placesTraveled/new/">add new place</a>
 {{#each newuser.placesTraveled}}
 <ul></ul>
 <li>{{state}}</li>
@@ -30,9 +29,7 @@
 <li>{{review}}</li>
 </ul>
 </div>
-{{!-- <li>{{image}}</li>
-<li>{{imageone}}</li>
-<li>{{imagetwo}}</li> --}}
+{
 <li>{{review}}</li>
 <form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
   <button type="submit">Delete This Places Traveled</button>

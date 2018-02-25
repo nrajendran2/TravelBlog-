@@ -66,7 +66,7 @@ router.get('/:placesDesiredId/edit', (req, res) => {
   })
 
 
-router.put('/:id', (req,res) => {
+router.patch('/:id', (req,res) => {
 User.findByIdAndUpdate(req.params.userId).then((user)=>{
     user.placesdesired.id(req.params.id).update()
     return user.save()
