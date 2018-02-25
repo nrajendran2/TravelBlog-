@@ -34,11 +34,11 @@
 <form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
   <button type="submit">Delete This Places Traveled</button>
 </form>
-<a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Takes you to the edit page </a>
+<a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Edit </a>
 {{/each}}
 </div>
 
-<a href="/users/{{newuser._id}}/placesDesired/new/">add new place</a>
+<a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination</a>
 <div class="leftside">
 {{#each newuser.placesDesired}}
 <li>{{location}}</li>
@@ -52,9 +52,9 @@
 <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
   <button type="submit">Delete This Places Desired</button>
 </form>
-<a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Takes you to the edit page </a>
+<a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a>
 {{/each}}
-<a href="/users/{{newuser._id}}/placesDesired/new/">add new place</a>
+<a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination </a>
 </div>
 
 </div>
