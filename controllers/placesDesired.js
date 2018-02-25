@@ -52,11 +52,12 @@ router.post('/', (req, res) => {
 
 })
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:placesDesiredId/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
         console.log("USER-----", user)
-      const placesDesired = user.placesDesired.id(req.params.id)
+      const placesDesiredid = req.params.placesDesiredId
+
       res.render('placesDesired/edit', {
         userId: req.params.userId,
         placesDesired: placesDesired
