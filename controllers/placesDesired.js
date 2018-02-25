@@ -56,39 +56,39 @@ router.get('/:placesDesiredId/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
         console.log("USER-----", user)
-      const placesDesiredid = req.params.placesDesiredId
+        const placesDesiredid = req.params.placesDesiredId
 
-      res.render('placesDesired/edit', {
-        userId: req.params.userId,
-        placesDesired: placesDesired
-      })
+        res.render('placesDesired/edit', {
+            userId: req.params.userId,
+            placesDesired: placesDesired
+        })
     })
-  })
-
-
-router.patch('/:id', (req,res) => {
-User.findByIdAndUpdate(req.params.userId).then((user)=>{
-    user.placesdesired.id(req.params.id).update()
-    return user.save()
-}).then (()=> {
-    res.redirect(`/users/${req.params.userId}/placesDesired`)
 })
+
+
+router.patch('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId).then((user) => {
+        user.placesdesired.id(req.params.id).update()
+        return user.save()
+    }).then(() => {
+        res.redirect(`/users/${req.params.userId}/placesDesired`)
+    })
 })
 
 
 //Delete Route
 router.delete('/:id', (req, res) => {
-User.findById(req.params.userId).then((user)=> {
-user.placesDesired.id(req.params.id).remove()
-return user.save()
-}).then (()=> {
-    res.redirect(`/users/${req.params.userId}`)
-})
+    User.findById(req.params.userId).then((user) => {
+        user.placesDesired.id(req.params.id).remove()
+        return user.save()
+    }).then(() => {
+        res.redirect(`/users/${req.params.userId}`)
+    })
 
 })
 
-  
-  
+
+
 // router.get('/:id', (req, res) => {
 //     User.findById(req.params.id).then((user) => {
 //         console.log("param.id is", req.params.id)

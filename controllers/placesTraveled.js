@@ -38,8 +38,8 @@ router.post('/', (req, res) => {
             location: req.body.location,
             season: req.body.season,
             image: req.body.image,
-            image1: req.body.image1,
-            image2: req.bodyimagd2,
+            imageone: req.body.imageone,
+            imagetwo: req.bodyimagetwo,
             review: req.body.review
         })
         user.placesTraveled.push(newplacesTraveled)
@@ -53,41 +53,41 @@ router.post('/', (req, res) => {
 
 })
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:placesTraveledId/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
-      const placesTraveled = user.placesTraveled.id(req.params.id)
-      res.render('placesTraveled/edit', {
-        userId: req.params.userId,
-        placesTraveled: placesTraveled
-      })
+        const placesTraveled = user.placesTraveled.id(req.params.id)
+        res.render('placesTraveled/edit', {
+            userId: req.params.userId,
+            placesTraveled: placesTraveled
+        })
     })
-  })
-
-
-router.patch('/:id', (req,res) => {
-User.findByIdAndUpdate(req.params.userId).then((user)=>{
-    user.placesTraveled.id(req.params.id).update()
-    return user.save()
-}).then (()=> {
-    res.redirect(`/users/${req.params.userId}/placesTraveled`)
 })
+
+
+router.patch('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId).then((user) => {
+        user.placestraveled.id(req.params.id).update()
+        return user.save()
+    }).then(() => {
+        res.redirect(`/users/${req.params.userId}/placesTraveled`)
+    })
 })
 
 
 //Delete Route
 router.delete('/:id', (req, res) => {
-User.findById(req.params.userId).then((user)=> {
-user.placesTraveled.id(req.params.id).remove()
-return user.save()
-}).then (()=> {
-    res.redirect(`/users/${req.params.userId}`)
-})
+    User.findById(req.params.userId).then((user) => {
+        user.placesTraveled.id(req.params.id).remove()
+        return user.save()
+    }).then(() => {
+        res.redirect(`/users/${req.params.userId}`)
+    })
 
 })
 
-  
-  
+
+
 // router.get('/:id', (req, res) => {
 //     User.findById(req.params.id).then((user) => {
 //         console.log("param.id is", req.params.id)
