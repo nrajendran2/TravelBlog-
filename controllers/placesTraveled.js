@@ -67,7 +67,7 @@ router.get('/:id/edit', (req, res) => {
 
 router.patch('/:id', (req,res) => {
 User.findByIdAndUpdate(req.params.userId).then((user)=>{
-    user.placestraveled.id(req.params.id).update()
+    user.placesTraveled.id(req.params.id).update()
     return user.save()
 }).then (()=> {
     res.redirect(`/users/${req.params.userId}/placesTraveled`)
@@ -88,16 +88,16 @@ return user.save()
 
   
   
-router.get('/:id', (req, res) => {
-    User.findById(req.params.id).then((user) => {
-        console.log("param.id is", req.params.id)
-        console.log("User is", user)
-        const newuser = user
-        console.log("newuser is", newuser)
-        res.render('users/show', {
-            newuser: newuser
-        })
-    })
-})
+// router.get('/:id', (req, res) => {
+//     User.findById(req.params.id).then((user) => {
+//         console.log("param.id is", req.params.id)
+//         console.log("User is", user)
+//         const newuser = user
+//         console.log("newuser is", newuser)
+//         res.render('users/show', {
+//             newuser: newuser
+//         })
+//     })
+// })
 
 module.exports = router;

@@ -89,16 +89,16 @@ return user.save()
 
   
   
-router.get('/:id', (req, res) => {
-    User.findById(req.params.id).then((user) => {
-        console.log("param.id is", req.params.id)
-        console.log("User is", user)
-        const newuser = user
-        console.log("newuser is", newuser)
-        res.render('users/show', {
-            newuser: newuser
-        })
-    })
-})
+// router.get('/:id', (req, res) => {
+//     User.findById(req.params.id).then((user) => {
+//         console.log("param.id is", req.params.id)
+//         console.log("User is", user)
+//         const newuser = user
+//         console.log("newuser is", newuser)
+//         res.render('users/show', {
+//             newuser: newuser
+//         })
+//     })
+// })
 
 module.exports = router;

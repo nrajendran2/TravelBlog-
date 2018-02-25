@@ -1,60 +1,75 @@
 <h1>{{newuser.firstname}}</h1>
 
-{{!-- 
+{{!--
 <div>{{ newuser.firstname }}</div>
 <div>{{ newuser.lastname }}</div>
 <div>{{ newuser.placesTraveled.location}}</div>
 <div>{{newuser.placesDesired.[0].location}}</div>
 <div>{{users.placesTraveled.[0].state}}</div>
-<div> --}}
-    {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}}
-{{!-- s --}}
-{{!-- <a href="">Takes you to places desired </a>
+<div> --}} {{!-- this url will be something like localhost3000/users/:userId/placestraveled/``````` --}} {{!-- s --}} {{!--
+  <a
+    href="">Takes you to places desired </a>
 </div>
 <a href="/users/{{newuser._id}}/edit">Takes you to the edit page </a>
- --}}
+--}}
 
 <div class="bothsides">
-<div class="rightside">
-  <a href="/users/{{newuser._id}}/placesTraveled/new/">add new place</a>
-{{#each newuser.placesTraveled}}
-<ul></ul>
-<li>{{state}}</li>
-<li>{{location}}</li>
-<li>{{season}}</li>
-<div class= "imagerow">
-<li><img class ="firstimage" src="{{image}}"></li>
-<li><img class ="secondimage" src="{{image}}"></li>
-<li><img class ="thirdimage" src="{{imagetwo}}"></li>
-<li>{{review}}</li>
-</ul>
-</div>
-{
-<li>{{review}}</li>
-<form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
-  <button type="submit">Delete This Places Traveled</button>
-</form>
-<a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Edit </a>
-{{/each}}
-</div>
+  <div class="rightside">
+    {{#each newuser.placesTraveled}}
+    <ul></ul>
+    <li>{{state}}</li>
+    <li>{{location}}</li>
+    <li>{{season}}</li>
+    <div class="imagerow">
+      <li>
+        <img class="firstimage" src="{{image}}">
+      </li>
+      <li>
+        <img class="secondimage" src="{{image}}">
+      </li>
+      <li>
+        <img class="thirdimage" src="{{imagetwo}}">
+      </li>
+      <li>{{review}}</li>
+      </ul>
+    </div>
+    {
+    <li>{{review}}</li>
+    <form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
+      <button type="submit">Delete This Places Traveled</button>
+    </form>
+    <a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Edit Places Traveled </a>
+    {{/each}}
+    <a href="/users/{{newuser._id}}/placesTraveled/new/">Add New Places Traveled</a>
+  </div>
 
-<a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination</a>
-<div class="leftside">
-{{#each newuser.placesDesired}}
-<li>{{location}}</li>
-<li>{{season}}</li>
-<li>{{reason}}</li>
-<div class= "imagerow">
-<li><img class ="firstimage" src="{{image}}"></li>
-<li><img class ="secondimage" src="{{imageone}}"></li>
-<li><img class ="thirdimage" src="{{imagetwo}}"></li>
-</div>
-<form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
-  <button type="submit">Delete This Places Desired</button>
-</form>
-<a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a>
-{{/each}}
-<a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination </a>
-</div>
+  <div>
+    d
+  </div>
+
+
+  <div class="leftside">
+    {{#each newuser.placesDesired}}
+    <li>{{location}}</li>
+    <li>{{season}}</li>
+    <li>{{reason}}</li>
+    <div class="imagerow">
+      <li>
+        <img class="firstimage" src="{{image}}">
+      </li>
+      <li>
+        <img class="secondimage" src="{{imageone}}">
+      </li>
+      <li>
+        <img class="thirdimage" src="{{imagetwo}}">
+      </li>
+    </div>
+    <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
+      <button type="submit">Delete This Places Desired</button>
+    </form>
+    <a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a>
+    {{/each}}
+    <a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination </a>
+  </div>
 
 </div>
