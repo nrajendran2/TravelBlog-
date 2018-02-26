@@ -3,11 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("https://i.imgur.com/7gSmmjq.jpg");
   background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
 a {
-  color: white;
+  color: black;
   
   
 }
@@ -60,5 +61,11 @@ body {
   height: 100px;
   width: 100px;
 }
+li {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
 
-
+.openingpage {
+  text-align: center;
+}
