@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
 router.get('/:placesTraveledId/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
-        const placesTraveled = user.placesTraveled.id(req.params.id)
+        const placesTraveled = req.params.placesTraveledId
         res.render('placesTraveled/edit', {
             userId: req.params.userId,
             placesTraveled: placesTraveled
@@ -67,15 +67,21 @@ router.get('/:placesTraveledId/edit', (req, res) => {
 
 router.patch('/:id', (req, res) => {
     User.findById(req.params.userId).then((user) => {
-        const traveledplaces = user.placestraveled.id(req.params.id)
-        
+        console.log(req.body)
+        const traveled = user.placesTraveled.id(req.params.id)
+        traveled.state = req.body.state
+        traveled.location = req.body.location
+        traveled.season = req.body.season
+        traveled.image = req.body.image
+        traveled.imageone = req.body.imageone
+        traveled.imagetwo = req.body.imagetwo
+        traveled.imagethree= req.body.imagethree
+        traveled.review = req.body.review
         return user.save()
     }).then(() => {
-        res.redirect(`/users/${req.params.userId}/placesTraveled`)
-    }).catch((err) => {
-        console.log(err)
+        res.redirect(`/users/${req.params.userId}`)
     })
-})
+    })
 
 
 //Delete Route
