@@ -76,6 +76,7 @@ router.patch('/:id', (req, res) => {
         place.imageone = req.body.imageone
         place.imagetwo = req.body.imagetwo
         place.imagethree = req.body.imagethree
+        place.reason = req.body.reason
         return user.save()
     }).then(() => {
         res.redirect(`/users/${req.params.userId}`)
