@@ -1,4 +1,4 @@
-<h1>{{newuser.firstname}}</h1>
+<h1>{{newuser.firstname}}'s Travel Portfolio</h1>
 
 {{!--
 <div>{{ newuser.firstname }}</div>
@@ -17,7 +17,8 @@
   <div class="leftside">
     {{#each newuser.placesTraveled}}
     <ul></ul>
-    <li>{{state}}</li>
+
+    <li>State: {{state}}</li>
     <li>{{location}}</li>
     <li>{{season}}</li>
     <br>
@@ -50,8 +51,8 @@
   </div>
 
 
-  <div>
-  ddddd
+  <div class ="buffer"> 
+  
   </div>
 
 
@@ -75,7 +76,7 @@
     <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
       <button type="submit">Delete This Places Desired</button>
     </form>
-    <a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a>
+   <li></a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a><li>
     {{/each}}
     <a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination </a>
   </div>

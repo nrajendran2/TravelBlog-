@@ -4,7 +4,8 @@ body {
   background-image: url("https://i.imgur.com/7gSmmjq.jpg");
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
-
+  min-height: 100vh;
+  color:black
 }
 
 a {
@@ -18,7 +19,7 @@ a {
   justify-content: center;
 }
 .leftside{
-  background-color: rgba(50,100,50,.8);
+  background-color: white;
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -26,7 +27,7 @@ a {
   
 }
 .rightside{
-background-color:rgba(100, 0, 0, .8);
+background-color: white;
 display:flex;
 flex-direction: column;
 text-align:center;
@@ -37,14 +38,15 @@ text-align:center;
 }
 
 h1{
-  text-align:center;
+  font-family: 'Amatic SC', cursive;
+    text-align:center;
 }
 body {
   /* padding: 10px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  flex-direction: column; */
 }
 .imagerow {
   display:flex;
@@ -63,8 +65,10 @@ body {
   width: 100px;
 }
 li {
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
+  font-family: 'Patua One', cursive;
+  font-size: 
+
+  color: black;
 }
 
 .openingpage {
@@ -78,4 +82,7 @@ li {
 
 .threebuttons {
   text-align:center;
+}
+.buffer {
+  margin: 20px;
 }
