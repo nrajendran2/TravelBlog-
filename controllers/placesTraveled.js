@@ -66,11 +66,14 @@ router.get('/:placesTraveledId/edit', (req, res) => {
 
 
 router.patch('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.userId).then((user) => {
-        user.placestraveled.id(req.params.id).update()
+    User.findById(req.params.userId).then((user) => {
+        const traveledplaces = user.placestraveled.id(req.params.id)
+        
         return user.save()
     }).then(() => {
         res.redirect(`/users/${req.params.userId}/placesTraveled`)
+    }).catch((err) => {
+        console.log(err)
     })
 })
 

@@ -19,8 +19,8 @@
     <ul></ul>
 
     <li>State: {{state}}</li>
-    <li>{{location}}</li>
-    <li>{{season}}</li>
+    <li>City/Location: {{location}}</li>
+    <li>Season: {{season}}</li>
     <br>
     <div class="imagerow">
       <li>
@@ -37,7 +37,7 @@
       </ul>
     </div>
     <div class="reviews">
-    <li>{{review}}</li>
+    <li>: {{review}}</li>
     </div>
 
     <div class= 'threebuttons'>
@@ -59,8 +59,9 @@
   <div class="rightside">
     <ul></ul>
     {{#each newuser.placesDesired}}
-    <li>{{location}}</li>
-    <li>{{season}}</li>
+    <li>State: {{state}}</li>
+    <li>Location: {{location}}</li>
+    <li>Season: {{season}}</li>
     <div class="imagerow">
       <li>
         <img class="firstimage" src="{{image}}">
@@ -72,11 +73,11 @@
         <img class="thirdimage" src="{{imagetwo}}">
       </li>
     </div>
-    <li>{{reason}}</li>
+    <li>Reason: {{reason}}</li>
     <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
       <button type="submit">Delete This Places Desired</button>
     </form>
-   <li></a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a><li>
+   <li><a href="/users/{{../newuser._id}}/placesDesired/{{_id}}/edit">Edit Desired Destination </a><li>
     {{/each}}
     <a href="/users/{{newuser._id}}/placesDesired/new/">Add New Desired Destination </a>
   </div>

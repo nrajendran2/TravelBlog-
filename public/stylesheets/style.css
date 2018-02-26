@@ -19,7 +19,7 @@ a {
   justify-content: center;
 }
 .leftside{
-  background-color: white;
+  background-color: lightgray;
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -66,7 +66,7 @@ body {
 }
 li {
   font-family: 'Patua One', cursive;
-  font-size: 
+  font-size: 18px;
 
   color: black;
 }

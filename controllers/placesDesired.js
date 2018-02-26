@@ -56,7 +56,7 @@ router.get('/:placesDesiredId/edit', (req, res) => {
 
     User.findById(req.params.userId).then((user) => {
         console.log("USER-----", user)
-        const placesDesiredid = req.params.placesDesiredId
+        const placesDesired = req.params.placesDesiredId
 
         res.render('placesDesired/edit', {
             userId: req.params.userId,
@@ -67,11 +67,18 @@ router.get('/:placesDesiredId/edit', (req, res) => {
 
 
 router.patch('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.userId).then((user) => {
-        user.placesdesired.id(req.params.id).update()
+    User.findById(req.params.userId).then((user) => {
+       const place = user.placesDesired.id(req.params.id)
+        place.state = req.body.state
+        place.location = req.body.location 
+        place.season = req.body.season
+        place.image = req.body.image
+        place.imageone = req.body.imageone
+        place.imagetwo = req.body.imagetwo
+        place.imagethree = req.body.imagethree
         return user.save()
     }).then(() => {
-        res.redirect(`/users/${req.params.userId}/placesDesired`)
+        res.redirect(`/users/${req.params.userId}`)
     })
 })
 

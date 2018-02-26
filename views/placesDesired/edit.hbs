@@ -1,6 +1,6 @@
 <h1>Edit Page</h1>
 {{!-- <form method="POST" action="/users/{{userId}}/placesTraveled"> --}}
-<form method="POST" action="/users/{{userId}}/placesDesired/{{users.placesDesired._id}}?_method=PATCH">
+<form method="POST" action="/users/{{userId}}/placesDesired/{{placesDesired}}?_method=PATCH">
     <div>
         <label for="state">State</label>
         <input type="text" name="state">
