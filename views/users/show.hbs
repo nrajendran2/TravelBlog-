@@ -35,15 +35,20 @@
      
       </ul>
     </div>
-    {
+    <div class="reviews">
     <li>{{review}}</li>
+    </div>
+
+    <div class= 'threebuttons'>
     <form method="POST" action="/users/{{../newuser._id}}/placesTraveled/{{_id}}?_method=DELETE">
       <button type="submit">Delete This Places Traveled</button>
     </form>
-    <a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Edit Places Traveled </a>
+   <li><a href="/users/{{../newuser._id}}/placesTraveled/{{_id}}/edit">Edit Places Traveled </a></li>
     {{/each}}
-    <a href="/users/{{newuser._id}}/placesTraveled/new/">Add New Places Traveled</a>
+    <li><a href="/users/{{newuser._id}}/placesTraveled/new/">Add New Places Traveled</a></li>
+    </div>
   </div>
+
 
   <div>
   ddddd
@@ -51,10 +56,10 @@
 
 
   <div class="rightside">
+    <ul></ul>
     {{#each newuser.placesDesired}}
     <li>{{location}}</li>
     <li>{{season}}</li>
-    <li>{{reason}}</li>
     <div class="imagerow">
       <li>
         <img class="firstimage" src="{{image}}">
@@ -66,6 +71,7 @@
         <img class="thirdimage" src="{{imagetwo}}">
       </li>
     </div>
+    <li>{{review}}</li>
     <form method="POST" action="/users/{{../newuser._id}}/placesDesired/{{_id}}?_method=DELETE">
       <button type="submit">Delete This Places Desired</button>
     </form>

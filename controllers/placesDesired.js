@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
             image: req.body.image,
             imageone: req.body.imageone,
             imagetwo: req.bodyimagetwo,
-            review: req.body.review
+            reason: req.body.reason
         })
         user.placesDesired.push(newplacesDesired)
 
