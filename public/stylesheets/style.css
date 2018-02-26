@@ -27,7 +27,7 @@ a {
   
 }
 .rightside{
-background-color: white;
+background-color: lightgray;
 display:flex;
 flex-direction: column;
 text-align:center;
@@ -53,16 +53,16 @@ body {
   flex-direction:row;
 }
 .firstimage {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 .secondimage {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 .thirdimage {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 li {
   font-family: 'Patua One', cursive;

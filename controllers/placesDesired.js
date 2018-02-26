@@ -57,6 +57,10 @@ router.get('/:placesDesiredId/edit', (req, res) => {
     User.findById(req.params.userId).then((user) => {
         const placesDesired = req.params.placesDesiredId
 
+        console.log("Here's the user", user)
+        console.log("Heres the desired place", placesDesired)
+
+        
         res.render('placesDesired/edit', {
             userId: req.params.userId,
             placesDesired: placesDesired
@@ -76,7 +80,6 @@ router.patch('/:id', (req, res) => {
         place.image = req.body.image
         place.imageone = req.body.imageone
         place.imagetwo = req.body.imagetwo
-        place.imagethree = req.body.imagethree
         place.reason = req.body.reason
         return user.save()
     }).then(() => {
