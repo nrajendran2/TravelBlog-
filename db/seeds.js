@@ -33,6 +33,13 @@ const washington = new PlacesDesired ({
     image: "asdfa", 
     review: "So good soo soo good "
 })
+const montreal = new PlacesTraveled ({
+    state: "Canada",
+    location: "Montreal",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/18193317_10212874114271946_56398798561668923_o.jpg?oh=8cf8bc91d89b0b4809ca39b197cedd99&oe=5B0E851E"
+    imageone
+
+})
 
 const canada = new PlacesTraveled ({
     state: "idk elsewhere",
@@ -45,6 +52,7 @@ const cameron = new User ({
     firstname: "Cameron",
     lastname: "Gunter",
     username: "CamtheMan2.0",
+    profilepic: 'https://i.imgur.com/8mIyvbw.jpg',
     placesTraveled: [ georgia, canada ],
     placesDesired: [oregon, washington]
 })
@@ -52,8 +60,16 @@ const cameron = new User ({
 const owen = new User ({
     firstname: "Owen",
     lastname: "Livingston",
-    username: "Owen334"
+    username: "Owen334",
+    profilepic:  'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/21167552_10155452874212530_7101397401924779131_o.jpg?oh=5297cbf86ce3e60c225b16f1943d3f4f&oe=5B100656'
 
+})
+
+const savanah = new User ({
+    firstname: "Savanah",
+    lastname: "DeBrosse",
+    username: "Savvyy230",
+    profilepic:"https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/21728719_10214247145116859_3171370647450555257_o.jpg?oh=d2a8949561a157052604e0d9e85f09c9&oe=5B0C2B30",
 })
 
 User.remove()

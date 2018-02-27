@@ -11,6 +11,7 @@ const UserSchema = new Schema (
        firstname: String,
        lastname: String,
         username: String,
+        profilepic: String,
         placesTraveled: [PTSchema],
         placesDesired: [PTDschema]
     }

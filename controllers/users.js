@@ -25,7 +25,8 @@ router.post('/', (req, res) => {
   const newUser = new User({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      username: req.body.username
+      username: req.body.username,
+      profilepic:req.body.profilepic
   })
   newUser.save().then((savedUser) => {
 
