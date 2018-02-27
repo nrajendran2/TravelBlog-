@@ -1,9 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<h1> Places Traveled</h1>
+<h1>Users of Travel Oasis</h1>
+
+
 
 <div>
 {{#each users}}
-<li><a href="/users/{{_id}}">{{firstname}}</a></li>
+<li><a href="/users/{{_id}}">{{username}} {{firstname}}</a></li>
 {{/each}}
 </div>
