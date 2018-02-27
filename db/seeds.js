@@ -16,25 +16,51 @@ mongoose.connection.on('error', (error) => {
   process.exit(-1)
 })
 
-const georgia = new PlacesTraveled ({
-    state: "Georgia"
+const barcelona = new PlacesTraveled ({
+    state: "Spain",
+    location: "Barcelona",
+    season: "Summer",
+    image: "http://www.spain.info/export/sites/spaininfo/comun/carrusel-recursos/cataluna/barcelona-000037111798-istock.jpg_369272544.jpg",
+    imageone:'https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/20800137_3336647291398_2821615874713008770_n.jpg?oh=54d31d7c8ef02c6015f959c33340b0d6&oe=5B427A68',
+    imagetwo: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12400963_2785582674772_2474865289087727765_n.jpg?oh=061ef0ce771016e99c66e50e0b48edf8&oe=5B4B1E37",
+    review: "Spain is awesome. One of the chillest/safest places to be"
+
 })
 
-const oregon = new PlacesDesired ({
-    state: "Oregon",
-    location:"Blue Crater Lake",
-    image: "Blue Crater Lake",
-    review: "Lemme go"
+
+const monaco = new PlacesDesired ({
+    state: "France",
+    location:"Monaco",
+    season: "Summer",
+    image: "https://www.kirkerholidays.com/media/image-cache/e2324f30-3cb6-43f6-bff0-8ebeeffea3f8/1920-765-1-1923-1282/1484156064-monaco.jpg",
+    imageone:"https://d3dqioy2sca31t.cloudfront.net/Projects/cms/production/000/003/371/original/4de5637c1a81b881785ee7e3ee1045f0/french-riviera-tour-monaco-french-riviera-2014.jpg",
+    imagetwo:"https://www.yachtcharterfleet.com/resources/images/section-headers/monaco-grand-prix-yacht-chartering.jpg",
+    reason: "Monaco Grand Prix is one the most historic races in the world, and Lewis Hamilton is a stud"
 })
 
-const washington = new PlacesDesired ({
-    state: "washington",
-    location: "Seattle",
-    image: "asdfa", 
-    review: "So good soo soo good "
+
+
+const newmexico = new PlacesDesired ({
+    state: "New Mexico",
+    location: "Albequrque",
+    season: "Fall",
+    image: "https://i.ytimg.com/vi/HBkHEoDRm5o/hqdefault.jpg",
+    imageone:"http://www.thelifeofluxury.com/images/albuquerque_international_balloon_fiesta_1.jpg",
+    imagetwo: "https://leisurevans.com/wp-content/uploads/2016/10/Albuquerque_International_Balloon_Fiesta_2013_Art_Gimbel-24.jpg",
+    reason: "The New Mexico Hot Airballoon Fesitval is one of the most famous in the world"
 })
 
-const newmexico = new PlacesDesired ()
+const greece = new PlacesDesired ({
+    state: "Greece",
+    location: "Mynkonos",
+    season: "Fall",
+    image: "http://i.dailymail.co.uk/i/pix/2017/10/28/13/45C47D9F00000578-5026565-image-a-12_1509192259303.jpg",
+    imageone:"http://images.kuoni.co.uk/73/greco-philia-hotel-boutique-mykonos-40115647-1502983983-ImageGalleryLightboxLarge.jpg",
+    imagetwo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5J-p-shh2MnWWbDpOXVa2RFHV7TrkBXv44Dko0vMoShE7kG9EbA",
+    reason: "The New Mexico Hot Airballoon Fesitval is one of the most famous in the world"
+})
+
+
 const montreal = new PlacesTraveled ({
     state: "Canada",
     location: "Montreal",
@@ -44,31 +70,33 @@ const montreal = new PlacesTraveled ({
     imagetwo: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/23926254_10214854046969026_1391946007697433743_o.jpg?oh=63bff7065920d25c5a4e4a9972f62c95&oe=5B051F62",
     review: "Montreal is awesome. One of the chillest/safest places to be"
 
-
 })
 
-const canada = new PlacesTraveled ({
-    state: "idk elsewhere",
-    location: "Vancouver",
-    image: "https://www.google.com/imgres?imgurl=https://www.hellobc.com/getmedia/43fd04b5-28b5-4685-8dab-4d74eed6cf6d/2-7086-Vancouver.jpg.aspx&imgrefurl=https://www.hellobc.com/vancouver.aspx&h=530&w=990&tbnid=jGABnpsGrzW4zM:&tbnh=164&tbnw=307&usg=__csibg_IWvlHMG2Ctwtf86pC32BU%3D&vet=1&docid=F-cnMWZU-TSutM",
-    review: 'It was good'
+const colombia = new PlacesTraveled ({
+    state: "Colombia",
+    location: "Medellin",
+    image: "http://intelligenttravel.nationalgeographic.com/files/2011/10/medellin1.jpg",
+    imageone:'https://media.boalingua.ch/images/_kolumbien_medellin_header.jpg',
+    imagetwo: "http://s1.1zoom.net/big0/158/419123-svetik.jpg",
+    review: 'It was a little dangerous, but the views were gorgeous'
 })
 
-const cameron = new User ({
-    firstname: "Cameron",
-    lastname: "Gunter",
-    username: "CamtheMan2.0",
-    profilepic: 'https://i.imgur.com/8mIyvbw.jpg',
-    placesTraveled: [ georgia, canada ],
-    placesDesired: [oregon, washington]
+const mona = new User ({
+    firstname: "Mona",
+    lastname: "Abdulrab",
+    username: "MoShopTillDeath",
+    profilepic: 'https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/20621913_3329633156049_8809284005641118952_n.jpg?oh=76d1e1765c8b0576315dac58747d9947&oe=5B430EF6',
+    placesTraveled: [colombia],
+    placesDesired: [greece]
 })
 
-const owen = new User ({
-    firstname: "Owen",
-    lastname: "Livingston",
-    username: "Owen334",
-    profilepic:  'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/21167552_10155452874212530_7101397401924779131_o.jpg?oh=5297cbf86ce3e60c225b16f1943d3f4f&oe=5B100656'
-
+const stephen = new User ({
+    firstname: "Stephen",
+    lastname: "Mcgill",
+    username: "SMcGill24",
+    profilepic:  'https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/25442869_3553053821071_700445569915381568_n.jpg?oh=e61d351e03e50a7146e67bb133363665&oe=5B1777F6',
+    placesTraveled: [barcelona],
+    placesDesired: [monaco]
 })
 
 const savanah = new User ({
@@ -76,14 +104,15 @@ const savanah = new User ({
     lastname: "DeBrosse",
     username: "Savvyy230",
     profilepic:"https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/21728719_10214247145116859_3171370647450555257_o.jpg?oh=d2a8949561a157052604e0d9e85f09c9&oe=5B0C2B30",
-    placesTraveled: [montreal]
+    placesTraveled: [montreal],
+    placesDesired: [newmexico]
 })
 
 User.remove()
 .then(()=> {
         return User.remove()
 }).then(()=> {
-    return User.insertMany([cameron,owen, savanah])
+    return User.insertMany([mona,stephen,savanah])
 }).then(()=> {
     console.log("saved users")
     db.close()
