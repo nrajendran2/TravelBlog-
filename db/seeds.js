@@ -33,11 +33,17 @@ const washington = new PlacesDesired ({
     image: "asdfa", 
     review: "So good soo soo good "
 })
+
+const newmexico = new PlacesDesired ()
 const montreal = new PlacesTraveled ({
     state: "Canada",
     location: "Montreal",
-    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/18193317_10212874114271946_56398798561668923_o.jpg?oh=8cf8bc91d89b0b4809ca39b197cedd99&oe=5B0E851E"
-    imageone
+    season: "Winter",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/18193317_10212874114271946_56398798561668923_o.jpg?oh=8cf8bc91d89b0b4809ca39b197cedd99&oe=5B0E851E",
+    imageone: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/23926214_10214854037088779_6117001922399888762_o.jpg?oh=2ed7bb95f5e7dc000d62f347221f860b&oe=5B0D0759",
+    imagetwo: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/23926254_10214854046969026_1391946007697433743_o.jpg?oh=63bff7065920d25c5a4e4a9972f62c95&oe=5B051F62",
+    review: "Montreal is awesome. One of the chillest/safest places to be"
+
 
 })
 
@@ -70,13 +76,14 @@ const savanah = new User ({
     lastname: "DeBrosse",
     username: "Savvyy230",
     profilepic:"https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/21728719_10214247145116859_3171370647450555257_o.jpg?oh=d2a8949561a157052604e0d9e85f09c9&oe=5B0C2B30",
+    placesTraveled: [montreal]
 })
 
 User.remove()
 .then(()=> {
         return User.remove()
 }).then(()=> {
-    return User.insertMany([cameron,owen])
+    return User.insertMany([cameron,owen, savanah])
 }).then(()=> {
     console.log("saved users")
     db.close()
